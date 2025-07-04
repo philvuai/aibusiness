@@ -1,0 +1,29 @@
+{
+  "name": "the-ai-business-website",
+  "version": "1.0.0",
+  "description": "A cutting-edge website for The Ai Business - AI solutions for SMEs",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build complete'",
+    "dev": "netlify dev"
+  },
+  "keywords": [
+    "ai",
+    "business",
+    "sme",
+    "artificial-intelligence",
+    "automation",
+    "website"
+  ],
+  "author": "The Ai Business",
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
