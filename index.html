@@ -86,21 +86,28 @@
         }
     </script>
     <style>
+        body {
+            background: #ffffff;
+            color: #000000;
+        }
+        
         .gradient-bg {
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+            background: linear-gradient(-45deg, #f8f9fa, #e9ecef, #dee2e6, #ced4da);
             background-size: 400% 400%;
             animation: gradient-shift 15s ease infinite;
+            opacity: 0.3;
         }
         
         .glassmorphism {
             backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
         .dark .glassmorphism {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(250, 250, 250, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .floating-nav {
@@ -141,15 +148,16 @@
         }
         
         .premium-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
         }
         
         .premium-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
         }
         
         .asymmetric-grid {
@@ -165,21 +173,21 @@
         }
     </style>
 </head>
-<body class="font-sans transition-all duration-300 ease-in-out">
+<body class="font-sans transition-all duration-300 ease-in-out bg-white text-black">
     <!-- Gradient Background -->
-    <div class="fixed inset-0 gradient-bg opacity-50"></div>
+    <div class="fixed inset-0 gradient-bg"></div>
     
     <!-- Floating Navigation -->
     <nav class="floating-nav glassmorphism rounded-full px-6 py-3 animate-fade-in">
         <div class="flex items-center space-x-6">
-            <div class="font-bold text-white text-lg">The Ai Business</div>
+            <div class="font-bold text-black text-lg">The AI Business</div>
             <div class="hidden md:flex space-x-4">
-                <a href="#home" class="text-white hover:text-blue-300 transition-colors">Home</a>
-                <a href="#services" class="text-white hover:text-blue-300 transition-colors">Services</a>
-                <a href="#partners" class="text-white hover:text-blue-300 transition-colors">Partners</a>
-                <a href="#contact" class="text-white hover:text-blue-300 transition-colors">Contact</a>
+                <a href="#home" class="text-black hover:text-blue-600 transition-colors">Home</a>
+                <a href="#services" class="text-black hover:text-blue-600 transition-colors">Services</a>
+                <a href="#partners" class="text-black hover:text-blue-600 transition-colors">Partners</a>
+                <a href="#contact" class="text-black hover:text-blue-600 transition-colors">Contact</a>
             </div>
-            <button id="darkModeToggle" class="text-white hover:text-blue-300 transition-colors">
+            <button id="darkModeToggle" class="text-black hover:text-blue-600 transition-colors">
                 <i data-lucide="sun" class="w-5 h-5"></i>
             </button>
         </div>
@@ -189,49 +197,49 @@
     <section id="home" class="relative min-h-screen flex items-center justify-center px-4">
         <div class="text-center z-10 max-w-6xl mx-auto">
             <div class="mb-6 animate-fade-in">
-                <span class="inline-block bg-white/10 backdrop-blur-md rounded-full px-6 py-2 text-white/90 text-sm font-medium border border-white/20">
+                <span class="inline-block bg-black/5 backdrop-blur-md rounded-full px-6 py-2 text-black text-sm font-medium border border-black/10">
                     Trusted by 500+ UK businesses
                 </span>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-slide-up leading-tight">
+            <h1 class="text-5xl md:text-7xl font-bold text-black mb-6 animate-slide-up leading-tight">
                 AI that actually
-                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                     works for business
                 </span>
             </h1>
-            <p class="text-xl md:text-2xl text-white/80 mb-8 animate-fade-in max-w-3xl mx-auto leading-relaxed" style="animation-delay: 0.3s;">
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 animate-fade-in max-w-3xl mx-auto leading-relaxed" style="animation-delay: 0.3s;">
                 We help UK SMEs implement proven AI solutions that reduce costs, increase efficiency, and drive real growth.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in mb-8" style="animation-delay: 0.6s;">
-                <a href="#contact" class="premium-card px-8 py-4 text-white font-semibold rounded-full hover:animate-pulse-glow transition-all">
+                <a href="#contact" class="bg-black text-white px-8 py-4 font-semibold rounded-full hover:bg-gray-800 transition-all shadow-lg">
                     Book Free Consultation
                 </a>
-                <a href="#services" class="glassmorphism px-8 py-4 text-white font-semibold rounded-full hover:bg-white/20 transition-all">
+                <a href="#services" class="glassmorphism px-8 py-4 text-black font-semibold rounded-full hover:bg-black/5 transition-all">
                     View Our Services
                 </a>
             </div>
-            <div class="text-white/60 text-sm animate-fade-in" style="animation-delay: 0.9s;">
+            <div class="text-gray-600 text-sm animate-fade-in" style="animation-delay: 0.9s;">
                 <p>✓ ROI within 90 days &nbsp;&nbsp; ✓ UK-based experts &nbsp;&nbsp; ✓ No technical knowledge required</p>
             </div>
         </div>
         
         <!-- Floating Elements -->
-        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full animate-float"></div>
-        <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-500/20 rounded-full animate-float" style="animation-delay: 2s;"></div>
-        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-pink-500/20 rounded-full animate-float" style="animation-delay: 4s;"></div>
+        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-100 rounded-full animate-float opacity-40"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-100 rounded-full animate-float opacity-40" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-gray-100 rounded-full animate-float opacity-40" style="animation-delay: 4s;"></div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="relative py-20 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 section-animate">
-                <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                <h2 class="text-4xl md:text-6xl font-bold text-black mb-4">
                     How we
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
                         transform businesses
                     </span>
                 </h2>
-                <p class="text-xl text-white/70 max-w-2xl mx-auto">Proven methodologies that deliver measurable results for UK SMEs</p>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Proven methodologies that deliver measurable results for UK SMEs</p>
             </div>
             
             <div class="asymmetric-grid">
@@ -240,16 +248,16 @@
                         <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-4">
                             <i data-lucide="search" class="w-6 h-6 text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Discovery & Assessment</h3>
-                        <p class="text-white/70">We analyse your current processes to identify high-impact AI opportunities</p>
+                        <h3 class="text-xl font-bold text-black mb-2">Discovery & Assessment</h3>
+                        <p class="text-gray-600">We analyse your current processes to identify high-impact AI opportunities</p>
                     </div>
                     
                     <div class="premium-card p-6 rounded-3xl section-animate">
                         <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mb-4">
                             <i data-lucide="settings" class="w-6 h-6 text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Custom Implementation</h3>
-                        <p class="text-white/70">Tailored AI solutions built specifically for your business needs</p>
+                        <h3 class="text-xl font-bold text-black mb-2">Custom Implementation</h3>
+                        <p class="text-gray-600">Tailored AI solutions built specifically for your business needs</p>
                     </div>
                 </div>
                 
@@ -257,12 +265,12 @@
                     <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Ongoing Optimisation</h3>
-                    <p class="text-white/70 mb-6">Continuous monitoring and improvement to maximise your ROI</p>
-                    <ul class="space-y-3 text-white/80">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>Performance tracking & reporting</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>Regular system updates</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>Strategic AI roadmap development</li>
+                    <h3 class="text-2xl font-bold text-black mb-4">Ongoing Optimisation</h3>
+                    <p class="text-gray-600 mb-6">Continuous monitoring and improvement to maximise your ROI</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Performance tracking & reporting</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Regular system updates</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Strategic AI roadmap development</li>
                     </ul>
                 </div>
             </div>
@@ -273,13 +281,13 @@
     <section class="relative py-20 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 section-animate">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">
                     Trusted by
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
                         forward-thinking businesses
                     </span>
                 </h2>
-                <p class="text-lg text-white/70 max-w-2xl mx-auto">Join hundreds of UK SMEs already benefiting from our AI expertise</p>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Join hundreds of UK SMEs already benefiting from our AI expertise</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -287,56 +295,56 @@
                     <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="users" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-3xl font-bold text-white mb-2">500+</h3>
-                    <p class="text-white/70">UK businesses transformed</p>
+                    <h3 class="text-3xl font-bold text-black mb-2">500+</h3>
+                    <p class="text-gray-600">UK businesses transformed</p>
                 </div>
                 
                 <div class="premium-card p-6 rounded-3xl section-animate text-center">
                     <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="pound-sterling" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-3xl font-bold text-white mb-2">£2.3M+</h3>
-                    <p class="text-white/70">Cost savings delivered</p>
+                    <h3 class="text-3xl font-bold text-black mb-2">£2.3M+</h3>
+                    <p class="text-gray-600">Cost savings delivered</p>
                 </div>
                 
                 <div class="premium-card p-6 rounded-3xl section-animate text-center">
                     <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="clock" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-3xl font-bold text-white mb-2">40%</h3>
-                    <p class="text-white/70">Average time saved</p>
+                    <h3 class="text-3xl font-bold text-black mb-2">40%</h3>
+                    <p class="text-gray-600">Average time saved</p>
                 </div>
             </div>
             
             <div class="glassmorphism rounded-3xl p-8 section-animate">
                 <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold text-white mb-4">What our clients say</h3>
+                    <h3 class="text-2xl font-bold text-black mb-4">What our clients say</h3>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white/5 rounded-2xl p-6">
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
                                 <span class="text-white font-bold">JM</span>
                             </div>
                             <div>
-                                <p class="text-white font-medium">James Morrison</p>
-                                <p class="text-white/60 text-sm">Managing Director, Morrison Manufacturing</p>
+                                <p class="text-black font-medium">James Morrison</p>
+                                <p class="text-gray-600 text-sm">Managing Director, Morrison Manufacturing</p>
                             </div>
                         </div>
-                        <p class="text-white/80 italic">"The AI Business helped us reduce our invoice processing time by 75%. What used to take hours now takes minutes. Exceptional service."</p>
+                        <p class="text-gray-700 italic">"The AI Business helped us reduce our invoice processing time by 75%. What used to take hours now takes minutes. Exceptional service."</p>
                     </div>
                     
-                    <div class="bg-white/5 rounded-2xl p-6">
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mr-4">
                                 <span class="text-white font-bold">SP</span>
                             </div>
                             <div>
-                                <p class="text-white font-medium">Sarah Parker</p>
-                                <p class="text-white/60 text-sm">CEO, Parker Consulting Ltd</p>
+                                <p class="text-black font-medium">Sarah Parker</p>
+                                <p class="text-gray-600 text-sm">CEO, Parker Consulting Ltd</p>
                             </div>
                         </div>
-                        <p class="text-white/80 italic">"Professional, knowledgeable, and delivered real results. Our customer service response time improved by 60% within weeks."</p>
+                        <p class="text-gray-700 italic">"Professional, knowledgeable, and delivered real results. Our customer service response time improved by 60% within weeks."</p>
                     </div>
                 </div>
             </div>
@@ -347,13 +355,13 @@
     <section id="partners" class="relative py-20 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 section-animate">
-                <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                <h2 class="text-4xl md:text-6xl font-bold text-black mb-4">
                     Enterprise-grade
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600">
                         AI platforms
                     </span>
                 </h2>
-                <p class="text-xl text-white/70 max-w-2xl mx-auto">We're certified partners with the world's leading AI providers</p>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">We're certified partners with the world's leading AI providers</p>
             </div>
             
             <div class="glassmorphism rounded-3xl p-8 section-animate">
@@ -362,40 +370,40 @@
                         <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                             <i data-lucide="message-square" class="w-8 h-8 text-white"></i>
                         </div>
-                        <span class="text-white font-medium">OpenAI</span>
-                        <span class="text-white/50 text-xs">ChatGPT Enterprise</span>
+                        <span class="text-black font-medium">OpenAI</span>
+                        <span class="text-gray-500 text-xs">ChatGPT Enterprise</span>
                     </div>
                     
                     <div class="logo-hover flex flex-col items-center group">
                         <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                             <i data-lucide="brain" class="w-8 h-8 text-white"></i>
                         </div>
-                        <span class="text-white font-medium">Anthropic</span>
-                        <span class="text-white/50 text-xs">Claude AI</span>
+                        <span class="text-black font-medium">Anthropic</span>
+                        <span class="text-gray-500 text-xs">Claude AI</span>
                     </div>
                     
                     <div class="logo-hover flex flex-col items-center group">
                         <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                             <i data-lucide="mic" class="w-8 h-8 text-white"></i>
                         </div>
-                        <span class="text-white font-medium">Granola</span>
-                        <span class="text-white/50 text-xs">AI Meetings</span>
+                        <span class="text-black font-medium">Granola</span>
+                        <span class="text-gray-500 text-xs">AI Meetings</span>
                     </div>
                     
                     <div class="logo-hover flex flex-col items-center group">
                         <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                             <i data-lucide="code-2" class="w-8 h-8 text-white"></i>
                         </div>
-                        <span class="text-white font-medium">Microsoft</span>
-                        <span class="text-white/50 text-xs">Copilot 365</span>
+                        <span class="text-black font-medium">Microsoft</span>
+                        <span class="text-gray-500 text-xs">Copilot 365</span>
                     </div>
                     
                     <div class="logo-hover flex flex-col items-center group">
                         <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                             <i data-lucide="sparkles" class="w-8 h-8 text-white"></i>
                         </div>
-                        <span class="text-white font-medium">Google</span>
-                        <span class="text-white/50 text-xs">Gemini Pro</span>
+                        <span class="text-black font-medium">Google</span>
+                        <span class="text-gray-500 text-xs">Gemini Pro</span>
                     </div>
                 </div>
             </div>
@@ -406,47 +414,47 @@
     <section id="contact" class="relative py-20 px-4">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16 section-animate">
-                <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                <h2 class="text-4xl md:text-6xl font-bold text-black mb-4">
                     Start your
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                         AI transformation
                     </span>
                 </h2>
-                <p class="text-xl text-white/70 max-w-2xl mx-auto">Book a free consultation with our AI experts. No obligation, just actionable insights for your business.</p>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Book a free consultation with our AI experts. No obligation, just actionable insights for your business.</p>
             </div>
             
             <div class="glassmorphism rounded-3xl p-8 section-animate">
                 <form id="contactForm" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-white font-medium mb-2">Company Name</label>
-                            <input type="text" name="companyName" required class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-400" placeholder="Your Company">
+                            <label class="block text-black font-medium mb-2">Company Name</label>
+                            <input type="text" name="companyName" required class="form-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:bg-white" placeholder="Your Company">
                         </div>
                         <div>
-                            <label class="block text-white font-medium mb-2">Industry Sector</label>
-                            <input type="text" name="industry" required class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-400" placeholder="e.g. Manufacturing, Professional Services">
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-white font-medium mb-2">Contact Name</label>
-                            <input type="text" name="contactName" required class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-400" placeholder="First and Last Name">
-                        </div>
-                        <div>
-                            <label class="block text-white font-medium mb-2">Email Address</label>
-                            <input type="email" name="email" required class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-400" placeholder="name@company.co.uk">
+                            <label class="block text-black font-medium mb-2">Industry Sector</label>
+                            <input type="text" name="industry" required class="form-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:bg-white" placeholder="e.g. Manufacturing, Professional Services">
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-white font-medium mb-2">Phone Number</label>
-                            <input type="tel" name="phone" class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-400" placeholder="07XXX XXXXXX">
+                            <label class="block text-black font-medium mb-2">Contact Name</label>
+                            <input type="text" name="contactName" required class="form-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:bg-white" placeholder="First and Last Name">
                         </div>
                         <div>
-                            <label class="block text-white font-medium mb-2">Number of Employees</label>
-                            <select name="companySize" required class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-blue-400">
+                            <label class="block text-black font-medium mb-2">Email Address</label>
+                            <input type="email" name="email" required class="form-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:bg-white" placeholder="name@company.co.uk">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-black font-medium mb-2">Phone Number</label>
+                            <input type="tel" name="phone" class="form-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:bg-white" placeholder="07XXX XXXXXX">
+                        </div>
+                        <div>
+                            <label class="block text-black font-medium mb-2">Number of Employees</label>
+                            <select name="companySize" required class="form-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black focus:outline-none focus:border-blue-500 focus:bg-white">
                                 <option value="">Select company size</option>
                                 <option value="1-10">1-10 employees</option>
                                 <option value="11-50">11-50 employees</option>
@@ -458,16 +466,16 @@
                     </div>
                     
                     <div>
-                        <label class="block text-white font-medium mb-2">Current Business Challenges</label>
-                        <textarea name="comments" rows="4" class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-400" placeholder="What specific challenges are you facing that AI could help solve? (Optional)"></textarea>
+                        <label class="block text-black font-medium mb-2">Current Business Challenges</label>
+                        <textarea name="comments" rows="4" class="form-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:bg-white" placeholder="What specific challenges are you facing that AI could help solve? (Optional)"></textarea>
                     </div>
                     
                     <div class="text-center">
-                        <button type="submit" class="premium-card px-8 py-4 text-white font-semibold rounded-full hover:animate-pulse-glow transition-all">
+                        <button type="submit" class="bg-black text-white px-8 py-4 font-semibold rounded-full hover:bg-gray-800 transition-all shadow-lg">
                             <i data-lucide="calendar" class="w-5 h-5 inline mr-2"></i>
                             Book Free Consultation
                         </button>
-                        <p class="text-white/50 text-sm mt-3">Typically responds within 2 hours during business hours</p>
+                        <p class="text-gray-500 text-sm mt-3">Typically responds within 2 hours during business hours</p>
                     </div>
                 </form>
             </div>
@@ -478,25 +486,25 @@
     <footer class="relative py-12 px-4">
         <div class="max-w-6xl mx-auto text-center">
             <div class="glassmorphism rounded-3xl p-8">
-                <h3 class="text-2xl font-bold text-white mb-2">The AI Business</h3>
-                <p class="text-white/90 font-medium mb-2">Expert AI Consultancy for UK SMEs</p>
-                <p class="text-white/70 mb-6">Helping British businesses leverage artificial intelligence for competitive advantage</p>
+                <h3 class="text-2xl font-bold text-black mb-2">The AI Business</h3>
+                <p class="text-black font-medium mb-2">Expert AI Consultancy for UK SMEs</p>
+                <p class="text-gray-600 mb-6">Helping British businesses leverage artificial intelligence for competitive advantage</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-sm">
-                    <div class="text-white/60">
-                        <p class="font-medium text-white/80 mb-1">Services</p>
+                    <div class="text-gray-600">
+                        <p class="font-medium text-black mb-1">Services</p>
                         <p>AI Strategy & Implementation</p>
                         <p>Process Automation</p>
                         <p>Staff Training & Support</p>
                     </div>
-                    <div class="text-white/60">
-                        <p class="font-medium text-white/80 mb-1">Expertise</p>
+                    <div class="text-gray-600">
+                        <p class="font-medium text-black mb-1">Expertise</p>
                         <p>ChatGPT Enterprise</p>
                         <p>Microsoft Copilot</p>
                         <p>Custom AI Solutions</p>
                     </div>
-                    <div class="text-white/60">
-                        <p class="font-medium text-white/80 mb-1">Contact</p>
+                    <div class="text-gray-600">
+                        <p class="font-medium text-black mb-1">Contact</p>
                         <p>phil@vu.co.uk</p>
                         <p>Free Consultation</p>
                         <p>UK-Based Support</p>
@@ -504,18 +512,18 @@
                 </div>
                 
                 <div class="flex justify-center space-x-6 mb-6">
-                    <a href="#" class="text-white/60 hover:text-white transition-colors" aria-label="LinkedIn">
+                    <a href="#" class="text-gray-600 hover:text-black transition-colors" aria-label="LinkedIn">
                         <i data-lucide="linkedin" class="w-6 h-6"></i>
                     </a>
-                    <a href="#" class="text-white/60 hover:text-white transition-colors" aria-label="Twitter">
+                    <a href="#" class="text-gray-600 hover:text-black transition-colors" aria-label="Twitter">
                         <i data-lucide="twitter" class="w-6 h-6"></i>
                     </a>
-                    <a href="mailto:phil@vu.co.uk" class="text-white/60 hover:text-white transition-colors" aria-label="Email">
+                    <a href="mailto:phil@vu.co.uk" class="text-gray-600 hover:text-black transition-colors" aria-label="Email">
                         <i data-lucide="mail" class="w-6 h-6"></i>
                     </a>
                 </div>
                 
-                <div class="text-white/50 text-xs border-t border-white/20 pt-4">
+                <div class="text-gray-500 text-xs border-t border-gray-200 pt-4">
                     <p>&copy; 2024 The AI Business. All rights reserved. | Registered in England & Wales</p>
                 </div>
             </div>
@@ -604,7 +612,7 @@
         // Add some dynamic floating elements
         function createFloatingElement() {
             const element = document.createElement('div');
-            element.className = 'absolute w-4 h-4 bg-blue-500/20 rounded-full animate-float';
+            element.className = 'absolute w-4 h-4 bg-gray-200 rounded-full animate-float opacity-60';
             element.style.left = Math.random() * 100 + '%';
             element.style.top = Math.random() * 100 + '%';
             element.style.animationDelay = Math.random() * 6 + 's';
